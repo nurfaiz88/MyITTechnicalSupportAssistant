@@ -1,0 +1,32 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "To get technical support assistant", "version": "1.0.0" },
+  "servers": [{ "url": "https://hooks.zapier.com" }],
+  "paths": {
+    "<<GET YOUR ENDPOINT FROM ZAPIER WEBHOOK - CATCH HOOK METHOD URL & Paste here starting /hook/...>>": {
+      "post": {
+        "operationId": "createTechnicalSupportTicket",
+        "summary": "Create Technical Support Ticket",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["name", "email", "issueDescription"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "email": { "type": "string" },
+                  "issueDescription": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      }
+    }
+  }
+}
